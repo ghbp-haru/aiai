@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>相積み運送アプリ　配送登録</title>
+    </head>
+    <body>
+        <h1>配送登録</h1>
+            <form disabled>
+                ・配送日程<form action="/submit_schedule" method="post"><br>
+                            <label for="start">開始日時:</label>
+                            <input type="datetime-local" id="start" name"start" required>
+                            <label for="end">終了日時:</label>
+                            <input type="datetime-local" id="end" name="end" required>
+                            <br><br>
+                ・配送先<br>
+                    　<form class="h-adr">
+                       <span class="p-country-name" style="display:none;">Japan</span>
+                        〒<input type="text" class="p-postal-code" size="3" maxlength="3"> -
+                          <input type="text" class="p-postal-code" size="4" maxlength="4">入力すると自動で住所が入力されます<br>
+                        都道府県<input type="text" class="p-region" autocomplete="address-level1"><br>
+                        市区町村<input type="text" class="p-locality" autocomplete="address-level2" ><br>
+                        町名<input type="text" class="p-street-address" /><br>
+                        番地<input type="text" class="p-extended-address" />
+                      </form>
+                      <script src="https://yubinbango.github.io/yubinbango/yubinbango.js" charset="UTF-8"></script>
+
+                ・配送車両<br>
+
+　  　　　　　　　<th>配送方法</th>
+    　  　　　　　　　　　<label><input type="radio" id="hospital0" name="hospital" onClick="hospitalflg0(this.checked);"/>バイク・自動車</label>
+    　　　　　　　　　　　　<label><input type="radio" id="hospital1" name="hospital" onClick="hospitalflg1(this.checked);"/>その他</label>
+        　  　　　　　　　<br>
+        　  　　　　　　　<th>車両ナンバー入力</th><br>
+        　  　　　　　　　<th>入力例(大阪123あ1234)</th><br>
+        　  　　　　　　　<input type="text" id="hospitalization" value="" disabled="disabled">
+
+　  　　　　　　　  <script>
+                          function hospitalflg0(ischecked){
+                            if(ischecked == true){
+                              document.getElementById("hospitalization").disabled = false;
+                            } else {
+                              document.getElementById("hospitalization").disabled = true;
+                            }
+                          }
+
+                          function hospitalflg1(ischecked){
+                            if(ischecked == true){
+                              document.getElementById("hospitalization").disabled = true;
+                            } else {
+                              document.getElementById("hospitalization").disabled = false;
+                            }
+                          }
+                    </script><br>
+
+                ・最低請求相積みポイント<br>
+                   <textarea disabled>300</textarea><br>
+            </form>
+        <hr>
+        <menu label="リンク">
+        <a href="./top.html">ホーム</a> / <a href="./index.html">ログアウト</a><br>
+        </menu>
+    </body>
+</html>
