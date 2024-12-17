@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\WelcomeController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\TopController;
+use App\Http\Controllers\TestController;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,3 +19,8 @@ use App\Http\Controllers\TopController;
 
 Route::get('/', [AuthController::class, 'index']);
 Route::get('/top/top', [TopController::class, 'top']);
+Route::post('/login' , [AuthController::class, 'login']);
+
+
+//form入力用
+Route::get('/test' , [TestController::class, 'index']);
