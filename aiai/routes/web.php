@@ -1,7 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\WelcomeController;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\TopController;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,3 +17,4 @@ use App\Http\Controllers\AuthController;
 */
 
 Route::get('/', [AuthController::class, 'index']);
+Route::get('/top/top', [TopController::class, 'top']);
